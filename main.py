@@ -34,8 +34,10 @@ while game_is_on:
         snake.extend()
 
     if snake.turtles[0].xcor() > 290 or snake.turtles[0].xcor() < -290 or snake.turtles[0].ycor() > 290 or snake.turtles[0].ycor() < -290:
-        game_is_on = False
-        scoreboard.game_over()
+        # game_is_on = False
+        scoreboard.reset()
+        # scoreboard.game_over()
+        snake.reset()
 
     for turtle in snake.turtles[1:]:
         if snake.turtles[0].distance(turtle) < 10:
